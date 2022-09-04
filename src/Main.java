@@ -35,14 +35,14 @@ public class Main {
         .limit(10).toList();
          selectionAge.forEach(System.out::println);
 
-    System.out.println("\n[первые 10 фамилий] Список отсортированный по фамилии список потенциально работоспособных людей с высшим образованием."
+    System.out.println("\n[первые 10 фамилий] Список отсортированный по фамилии потенциально работоспособных людей с высшим образованием."
         + "\n (от 18 до 60 лет для женщин и до 65 лет для мужчин). ");
     List<Person> workablePeopleAllGender = persons.stream()
         .filter(x -> x.getEducation().equals(Education.HIGHER))
         .filter(age -> ((18 < age.getAge()) && age.getAge() < 60) && age.getSex().equals(Sex.WOMAN) ||
          (18 < age.getAge()) && (age.getAge() < 65) )
         .sorted(Comparator.comparing(Person::getFamily)).limit(10).toList();
-          selectionAge.forEach(System.out::println);
+         selectionAge.forEach(System.out::println);
 
   }
 
